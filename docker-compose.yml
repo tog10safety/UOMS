@@ -1,0 +1,20 @@
+# Local development database only — the Django app itself is run with
+# `python manage.py runserver` (see README) so you get live reload.
+version: "3.9"
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: uoms_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: uoms_db
+      POSTGRES_USER: uoms_user
+      POSTGRES_PASSWORD: change-this-password
+    ports:
+      - "5432:5432"
+    volumes:
+      - uoms_pgdata:/var/lib/postgresql/data
+
+volumes:
+  uoms_pgdata:
