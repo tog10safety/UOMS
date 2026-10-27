@@ -17,4 +17,5 @@ dist/
 .vscode/
 .idea/
 .DS_Store
-"*.tsbuildinfo" 
+*.tsbuildinfo
+

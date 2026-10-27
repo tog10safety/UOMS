@@ -52,7 +52,7 @@ export default function OperationalMap({ points, height = '360px' }: Operational
     if (!map) return;
 
     const vectorLayer = map.getLayers().getArray().find((l) => l instanceof VectorLayer) as
-      | VectorLayer<VectorSource>
+      | VectorLayer<Feature>
       | undefined;
     if (!vectorLayer) return;
 
